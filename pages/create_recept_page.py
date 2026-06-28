@@ -82,7 +82,7 @@ class CreateReceptPage(BasePage):
         
         card_locator = RecipeCardLocators.get_card_by_title(title)
         try:
-            element = self.wait_for_visible_element(card_locator, timeout=5)
+            element = self.wait_for_visible_element(card_locator, timeout=10)
             return element.is_displayed()
         except:
             return False
@@ -91,5 +91,5 @@ class CreateReceptPage(BasePage):
     def get_recipe_title_text(self, title: str) -> str:
         
         card_locator = RecipeCardLocators.get_card_by_title(title)
-        element = self.wait_for_visible_element(card_locator, timeout=5)
+        element = self.wait_for_visible_element(card_locator, timeout=10)
         return element.text

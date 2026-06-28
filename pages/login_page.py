@@ -8,7 +8,6 @@ from locators.main_page_locators import RecipeCardLocators as mainloc
 
 class LoginPage(BasePage):
 
-
     @allure.step("Регистрация и вход")
     def login(self):
 
@@ -42,3 +41,6 @@ class LoginPage(BasePage):
 
         element = self.wait_for_visible_element(loginloc.AUTH_FORM, timeout=5)
         return element.is_displayed()
+    
+    def get_current_url(self):
+        return super().get_current_url()

@@ -89,4 +89,5 @@ class RegistrationPage(BasePage):
             "password": self.password
         }
 
-         
+    def get_current_url(self):
+        return super().get_current_url()

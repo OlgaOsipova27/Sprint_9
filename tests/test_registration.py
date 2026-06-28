@@ -1,7 +1,6 @@
 import allure
 
 from pages.registration_page import RegistrationPage
-from pages.base_page import BasePage
 from pages.login_page import LoginPage
 
 from data.url import URL_SIGNIN
@@ -11,11 +10,10 @@ class TestRegistration:
     @allure.title("Проверка, что после регистрации открывается страница входа")
     def test_after_registration_open_login_page(self, driver):
         
-        base_page = BasePage(driver)
         registration_page = RegistrationPage(driver)
         
         registration_page.registration()
-        url = base_page.get_current_url()
+        url = registration_page.get_current_url()
 
         assert url == URL_SIGNIN
 

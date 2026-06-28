@@ -73,6 +73,8 @@ class BasePage:
             EC.presence_of_element_located(locator)
         )
 
+    def open_url(self, url):
 
+        return self.driver.get(url)
 
     
